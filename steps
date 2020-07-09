@@ -1,0 +1,15 @@
+az login
+az ad sp create-for-rbac -n "PythonApp" --skip-assignment
+
+{
+  "appId": "b4292e44-9a8c-4ad1-82c0-f7db6d3bbca3",
+  "displayName": "PythonApp",
+  "name": "http://PythonApp",
+  "password": "9YwHXW0i.~H7-AGqxrOSHk_zC83GkMKZwL",
+  "tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47"
+}
+
+az keyvault set-policy --name "edisga" --spn b4292e44-9a8c-4ad1-82c0-f7db6d3bbca3 --key-permissions decrypt sign
+az keyvault set-policy --name "edisga" --spn b4292e44-9a8c-4ad1-82c0-f7db6d3bbca3 --secret-permissions get
+
+-Then go to your azure keyvault and add a secret named AppSecret with sql db password

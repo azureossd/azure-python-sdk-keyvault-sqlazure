@@ -30,14 +30,17 @@
 
   - To run this in Linux VM:
   > Follow this article https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver15#ubuntu17
+  > 
   > Also install this one to build pyodbc: `sudo apt-get install python3-dev`
 
 4. Set environment credentials:
 
-AZURE_CLIENT_ID
-AZURE_TENANT_ID
-AZURE_CLIENT_SECRET
+    AZURE_CLIENT_ID
 
-5. Create virtual env
+    AZURE_TENANT_ID
+
+    AZURE_CLIENT_SECRET
+
+5. Create virtual env.
 6. Install requirements.txt with `pip install -r requirements.txt`
 7. Run the app with `python index.py`

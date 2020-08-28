@@ -1,6 +1,13 @@
 # Steps
 
 ## Prerequisites:
+- Create an Azure KeyVault resource
+- Create a Service Principal
+- Create or use an existing Azure SQL Server database.
+- Create a policy to azure keyvault
+
+
+
 > Update Az CLI using curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 1. az login

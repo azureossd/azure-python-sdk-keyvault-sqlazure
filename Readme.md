@@ -4,26 +4,26 @@
 > Update Az CLI using curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
 1. az login
-2. Create a SP
+2. Create a Service Principal
 
 ```bash
-  az ad sp create-for-rbac -n "PythonAppLinux" --skip-assignment
+  az ad sp create-for-rbac -n "<spname>" --skip-assignment
 ```
-
+Sample output:
 ```log
   {                                                      
-    "appId": "28d044ea-809b-4c0a-b8c8-5413e526a206",     
+    "appId": "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx",     
     "displayName": "PythonAppLinux",                     
     "name": "http://PythonAppLinux",                     
-    "password": "*********i08TW0J4-~6",    
-    "tenant": "*******-91ab-2d7cd011db47"     
+    "password": "****************",    
+    "tenant": "xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxx"     
   }                                                      
 ```
 2. Create policies:
 
 ```bash
-  az keyvault set-policy --name "edisga" --spn 28d044ea-809b-4c0a-b8c8-5413e526a206 --key-permissions decrypt sign
-  az keyvault set-policy --name "edisga" --spn 28d044ea-809b-4c0a-b8c8-5413e526a206 --secret-permissions get
+  az keyvault set-policy --name "<policyname>" --spn <appId> --key-permissions decrypt sign
+  az keyvault set-policy --name "<policyname>" --spn <appId> --secret-permissions get
 ```
 
 3.Then go to your Azure Keyvault and add a secret named **AppSecret** with your Azure SQL db password.

@@ -8,7 +8,7 @@ database = 'database_name'
 username = 'username'
 
 credential = DefaultAzureCredential()
-secret_client = SecretClient(vault_url="https://edisga.vault.azure.net", credential=credential)
+secret_client = SecretClient(vault_url="https://<YOURKEYVAULTNAME>.vault.azure.net", credential=credential)
 
 secret = secret_client.get_secret("AppSecret")
 password = secret.value
